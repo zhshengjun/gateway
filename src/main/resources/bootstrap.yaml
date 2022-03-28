@@ -1,0 +1,18 @@
+server:
+  port: 8882
+nacos:
+  server-addr: nacos.stupidzhang.com:4848
+  namespace: 52478819-0492-4091-9890-eca56e726d39
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+      config:
+        file-extension: yaml
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
